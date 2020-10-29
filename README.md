@@ -35,6 +35,42 @@
 ### Database: Oracle 11g (XE)
 ### SQL Mapper: Mybatis
 
+# 개발 상황
+
+**Main**
+![](https://github.com/soominJung0413/Algorithm/blob/main/Spring-React%20Main.PNG)
+
+<hr>
+
+**Curation**
+![](https://github.com/soominJung0413/Algorithm/blob/main/Spring-React%20Curation.PNG)
+
+<hr>
+
+**Login**
+![](https://github.com/soominJung0413/Algorithm/blob/main/Spring-React%20Login.PNG)
+
+<hr>
+
+**Member Register**
+![](https://github.com/soominJung0413/Algorithm/blob/main/Spring-React%20MemberRegister.PNG)
+
+<hr>
+
+**Product List**
+![](https://github.com/soominJung0413/Algorithm/blob/main/Spring-React%20ProductList.png)
+
+<hr>
+
+**Add Cart And Purchase**
+![](https://github.com/soominJung0413/Algorithm/blob/main/Spring-React%20purchase.png)
+
+<hr>
+
+**Cart**
+![](https://github.com/soominJung0413/Algorithm/blob/main/Spring-React%20Cart.PNG)
+
+<hr>
 
 # UseCase Diagram
 ![usecase.png](./diagrams/usecase.png)
