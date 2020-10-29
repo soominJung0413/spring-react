@@ -79,3 +79,143 @@
 * 필요 컬럼: 식별용PK, 주문번호, 운송사, 송장번호, 배송상태
 * *shipping_id, *shipping_purchase_id, *Courier, *parcel_number, *delivery_state
 
+# introduces REST service apis at spring-boot
+please refer to classpath:/apis
+
+### Authentication (완료)
+- Service: (spring security)
+- Endpoint: /api/authorization
+- method: post
+- Request: Form(username[emailAddress/username], passsword)
+- Response: JSON(user info or exception)
+
+### MemberRegister (완료)
+- Service: MemberService
+- method: post
+- Endpoint: /api/MemberRegister
+- Request: Form(username, password, name, emailAddress, gender, birth, phone, *enrollDate, seller, *level, *delFlag, *deleteDate)
+* *=Generated Value
+- Response: JSON(user info or exception)
+
+### registerSeller (완료)
+- Service: MemberService
+- Endpoint: /api/registerSeller
+- method: post
+- Request: none
+- Response: JSON  (200 Status or Exception Message)
+
+### fetchUser (완료)
+- Service: MemberService
+- Endpoint: /api/fetchUser
+- method: get
+- Request: none
+- Response: JSON (user info or exception)
+
+### LoadUsername (완료)
+- Endpoint: /api/fetchUser
+- Response: JSON( username : String , authenticated : boolean )
+
+### Get Member (완료)
+- Service: MemberService
+- Endpoint: /api/getMember?username=:username
+- method: get
+- Request: username
+- Response: JSON (user info or exception)
+
+### Product Register (완료)
+- Service: ProductService
+- Endpoint: /api/ProductRegister
+- method: post
+- Request: form(prodName, thumbImage, stock, price, category, username)
+
+### File Upload (완료)
+- Service: ProductService
+- Endpoint: /api/fileUpload
+- method: post
+- Request: form(file, category)
+
+### All Product List (완료)
+- Service: ProductService
+- Endpoint: /api/listProductAll
+- method: get
+- Response: JSON -> return List<Product>
+
+### Product List (완료)
+- Service: ProductService
+- Endpoint: /api/SearchResult?key=:key
+- Request: key
+- Response: JSON -> return List<Product>
+
+### buyProductNow (완료)
+- Service: CartService
+- Endpoint: /api/purchase
+- method: post
+- Request: form(pid, numberOfItems, purchase.id)
+- Response: (200 Status or Exception Message)
+
+### getPurchased (완료)
+- Service: CartService
+- Endpoint: /api/getPurchased
+- method: post
+- Request: uid
+- Response: JSON -> List<Cart>
+
+### checkOut (완료)
+- Service: CartService
+- Endpoint: /api/checkOut
+- method: post
+- Request: uid
+- Response: JSON (200 Status or Exception Message)
+
+### Curation
+- Service: ProductService
+- Endpoint: /api/Curation/{pid}
+- Request: pid
+- Response: JSON 
+
+### getCart (완료)
+- Service: MemberService
+- Endpoint: /api/getCart/{username}
+- method: post
+- Request: username
+- Response: JSON -> List<Cart>
+
+### addToCart (완료)
+- Service: CartService
+- Endpoint: /api/addToCart
+- method: post
+- Request: form(pid, numberOfItems, purchase.id)
+- Response: JSON (200 Status or Exception Message)
+
+### deleteFromCart (완료)
+- Service: CartService
+- Endpoint: /api/deleteFromCart
+- method: post
+- Request: form(uid, pid)
+- Response: JSON (200 Status or Exception Message)
+
+### updateQtyFromCart (완료)
+- Service: CartService
+- Endpoint: /api/updateQtyFromCart
+- method: post
+- Request: form(uid, qty, pid)
+- Response: JSON (200 Status or Exception Message)
+
+### ProductDetail (완료)
+- Service: ProductService
+- Endpoint: /api/details/{product.id}
+- Request: product.id
+- Response: Object product
+
+### getProductById(완료)
+- Service: getProductById
+- Endpoint: /api/getProductById
+- method: post
+- Request: form(Array<Number>)
+- Response: JSON -> List<Product>
+
+### DeliveryRegister (완료)
+- Service: DeliveryService
+- Endpoint: /api/delivery
+- Request: form({"member" : {"username"},"zipcode","nameOfDelivery","address1","address2","mainAddress"})
+- Response: JSON(200 Status or Exception Message)
